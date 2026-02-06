@@ -1,394 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J.S. Brundage - The Duskwalker Chronicles</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-darker: #050505;
-            --text-light: #e8e8e8;
-            --text-dim: #a0a0a0;
-            --gold: #c9a961;
-            --purple-glow: rgba(138, 43, 226, 0.3);
-            --green-glow: rgba(34, 139, 34, 0.3);
-        }
-
-        body {
-            background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
-            color: var(--text-light);
-            font-family: 'Crimson Pro', serif;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo-crest {
-            height: 75px;
-            width: auto;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-        }
-
-        .logo:hover .logo-crest {
-            opacity: 1;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 10rem 2rem 6rem;
-            text-align: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 4px;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(201, 169, 97, 0.3);
-            animation: fadeIn 1s ease-out;
-        }
-
-        .hero .tagline {
-            font-size: 1.5rem;
-            color: var(--text-dim);
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        .hero .subtitle {
-            font-size: 1.2rem;
-            color: var(--text-dim);
-            margin-bottom: 3rem;
-            animation: fadeIn 1.4s ease-out;
-        }
-
-        /* Books Section */
-        .books-container {
-            max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 4rem;
-            margin-top: 4rem;
-        }
-
-        .book-card {
-            background: rgba(20, 20, 20, 0.6);
-            border-radius: 12px;
-            padding: 2.5rem;
-            border: 1px solid rgba(201, 169, 97, 0.15);
-            transition: all 0.4s ease;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .book-card:nth-child(1) {
-            animation-delay: 0.2s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-
-        .book-card:nth-child(2) {
-            animation-delay: 0.4s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-
-        .book-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .book-card:nth-child(1):hover {
-            box-shadow: 0 20px 60px var(--purple-glow);
-        }
-
-        .book-card:nth-child(2):hover {
-            box-shadow: 0 20px 60px var(--green-glow);
-        }
-
-        .book-cover {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
-        }
-
-        .book-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .book-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-        }
-
-        .buy-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold), #b8954a);
-            color: var(--bg-dark);
-            padding: 1rem 2.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
-        }
-
-        .buy-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(201, 169, 97, 0.5);
-        }
-
-        /* About Section */
-        .about-section {
-            max-width: 900px;
-            margin: 8rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .about-section h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 2rem;
-            letter-spacing: 3px;
-        }
-
-        .about-section p {
-            font-size: 1.2rem;
-            line-height: 1.9;
-            color: var(--text-dim);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Newsletter Section */
-        .newsletter {
-            max-width: 700px;
-            margin: 6rem auto;
-            padding: 3rem;
-            background: rgba(201, 169, 97, 0.05);
-            border: 1px solid rgba(201, 169, 97, 0.2);
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .newsletter h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .newsletter p {
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 6px;
-            color: var(--text-light);
-            font-family: 'Crimson Pro', serif;
-            font-size: 1rem;
-        }
-
-        .newsletter-input:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
-        .newsletter-button {
-            padding: 1rem 2rem;
-            background: var(--gold);
-            border: none;
-            border-radius: 6px;
-            color: var(--bg-dark);
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.5);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 2rem;
-            border-top: 1px solid rgba(201, 169, 97, 0.1);
-            color: var(--text-dim);
-            font-size: 0.95rem;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Featured Crest Section */
-        .featured-crest {
-            text-align: center;
-            margin: 8rem auto;
-            padding: 4rem 2rem;
-        }
-
-        .featured-crest img {
-            height: 400px;
-            width: auto;
-            opacity: 0.8;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        .crest-caption {
-            margin-top: 2rem;
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: var(--gold);
-            letter-spacing: 2px;
-            opacity: 0.9;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .logo-crest {
-                height: 40px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .books-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .featured-crest img {
-                height: 150px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <nav>
         <div class="nav-container">
@@ -405,8 +25,8 @@
 
     <section class="hero">
         <h1>THE DUSKWALKER CHRONICLES</h1>
-        <p class="tagline">An Epic Dark Fantasy Series</p>
-        <p class="subtitle">Where ancient magic meets forgotten kingdoms</p>
+        <p class="tagline">A Found-Family Fantasy Adventure</p>
+        <p class="subtitle">For readers who love Ranger's Apprentice and Percy Jackson</p>
     </section>
 
 
@@ -416,9 +36,9 @@
                 <img src="hollow-kings-prison.png" alt="The Hollow King's Prison" class="book-cover">
                 <h3 class="book-title">The Hollow King's Prison</h3>
                 <p class="book-description">
-                    Book One of The Duskwalker Chronicles. A prison bound by ancient vines and dark magic holds secrets
-                    that could shatter kingdoms. When the chains begin to break, one hero must face the darkness within
-                    to prevent an ancient evil from rising.
+                    The dead are walking. And they remember where they need to go.
+                    <br><br>
+                    Kira Duskwalker is a ranger—a tracker, a messenger, a woman who's spent years learning to handle trouble on her own. But when the dead start clawing out of the mountains, she realizes some trouble is too big for one person. Four strangers. No reason to trust each other. Every reason to walk away. But something ancient is waking beneath the mountains—something that's been imprisoned for five hundred years.
                 </p>
                 <a href="#" class="buy-button">BUY NOW</a>
             </div>
@@ -427,9 +47,9 @@
                 <img src="drowned-temple.png" alt="The Drowned Temple" class="book-cover">
                 <h3 class="book-title">The Drowned Temple</h3>
                 <p class="book-description">
-                    Book Two of The Duskwalker Chronicles. Beneath forgotten waters lies a temple that should never be
-                    found. As ancient powers awaken and reality itself begins to fracture, the path forward leads only
-                    deeper into the abyss.
+                    The marsh remembers what was buried there.
+                    <br><br>
+                    When a desperate mission sends Kira, Helga, Finn, and Alaric deep into Mistral Marsh, they discover the treacherous swamp holds more than quicksand and hungry predators. Something ancient stirs beneath the black water—something that was meant to stay forgotten. With Helga's courage tested, Finn's past catching up to them, and Alaric's faith shaken, Kira must hold her found family together.
                 </p>
                 <a href="#" class="buy-button">BUY NOW</a>
             </div>
@@ -445,13 +65,19 @@
     <section id="about" class="about-section">
         <h2>About the Author</h2>
         <p>
-            J.S. Brundage crafts dark fantasy worlds where ancient magic collides with mortal ambition.
-            The Duskwalker Chronicles explores themes of power, sacrifice, and the cost of confronting
-            the shadows that lurk at the edge of civilization.
+            J.S. Brundage built the Thornwick Protectorate for his sons. As a Dungeon Master, he'd spent years drawing maps, voicing NPCs, and setting traps. But there's the thing about being the DM: you never get to be surprised.
         </p>
         <p>
-            Drawing inspiration from classic fantasy while pushing into darker, more visceral territory,
-            each book in the series peels back another layer of a world teetering on the brink of collapse.
+            He wanted to play too.
+        </p>
+        <p>
+            On a rainy weekend when his youngest and he were both home sick with the flu, he decided to try something different—could AI run a decent D&D session? He wrote a prompt, set the scene in a corner of the Protectorate he'd never fully explored, and started rolling dice.
+        </p>
+        <p>
+            What happened surprised him. The AI didn't just run combat—it told a story. Characters emerged with real voices. Tensions built. For the first time, he got to experience his own world without knowing what came next.
+        </p>
+        <p>
+            The Duskwalker Chronicles is a gift for his boys, born from a flu-weekend experiment. Welcome to the Thornwick Protectorate.
         </p>
     </section>
 
@@ -472,5 +98,4 @@
         <p>&copy; 2026 J.S. Brundage. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
