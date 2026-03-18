@@ -43,20 +43,17 @@ nav {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
     text-decoration: none;
-}
-
-.logo-crest {
-    height: 50px;
-    width: auto;
-    opacity: 0.9;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 2px;
     transition: opacity 0.3s ease;
 }
 
-.logo:hover .logo-crest {
-    opacity: 1;
+.logo:hover {
+    opacity: 0.8;
 }
 
 .nav-links {
@@ -79,7 +76,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    padding: 10rem 2rem 6rem;
+    padding: 10rem 2rem 4rem;
     text-align: center;
     max-width: 1400px;
     margin: 0 auto;
@@ -107,14 +104,14 @@ nav {
 .hero .subtitle {
     font-size: 1.2rem;
     color: var(--text-dim);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     animation: fadeIn 1.4s ease-out;
 }
 
 /* Books Section */
 .books-container {
     max-width: 1400px;
-    margin: 4rem auto;
+    margin: 2rem auto 4rem;
     padding: 0 2rem;
 }
 
@@ -122,7 +119,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 4rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 .book-card {
@@ -132,6 +129,7 @@ nav {
     border: 1px solid rgba(201, 169, 97, 0.15);
     transition: all 0.4s ease;
     animation: fadeInUp 0.8s ease-out;
+    position: relative;
 }
 
 .book-card:nth-child(1) {
@@ -157,6 +155,17 @@ nav {
     border-color: var(--gold);
     box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
     background: rgba(200, 200, 200, 0.15);
+}
+
+.book-number {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    opacity: 0.8;
 }
 
 .book-cover {
@@ -229,7 +238,7 @@ nav {
 /* About Section */
 .about-section {
     max-width: 900px;
-    margin: 8rem auto;
+    margin: 8rem auto 4rem;
     padding: 0 2rem;
     text-align: center;
 }
@@ -247,6 +256,23 @@ nav {
     line-height: 1.9;
     color: var(--text-dim);
     margin-bottom: 1.5rem;
+}
+
+.author-quote {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(201, 169, 97, 0.2);
+    font-size: 2.5rem;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.author-quote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 2rem;
+    font-style: normal;
+    color: var(--gold);
 }
 
 /* Newsletter Section */
@@ -337,36 +363,23 @@ nav {
     color: var(--gold);
 }
 
-/* Featured Crest Section */
-.featured-crest {
-    text-align: center;
-    margin: 4rem auto;
-    padding: 4rem 2rem;
-}
-
-.featured-crest img {
-    height: 300px;
-    width: auto;
-    opacity: 0.8;
-    animation: fadeIn 1.5s ease-out;
-}
-
-.crest-caption {
-    margin-top: 2rem;
-    font-family: 'Cinzel', serif;
-    font-size: 3rem;
-    color: var(--gold);
-    letter-spacing: 2px;
-    opacity: 0.9;
-}
-
 /* Footer */
 footer {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 1rem 1rem 1rem;
     border-top: 1px solid rgba(201, 169, 97, 0.1);
     color: var(--text-dim);
     font-size: 0.95rem;
+}
+
+.publisher-logo {
+    margin-bottom: 1rem;
+}
+
+.publisher-logo img {
+    height: 500px;
+    width: auto;
+    opacity: 0.9;
 }
 
 /* Animations */
@@ -375,6 +388,7 @@ footer {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -386,6 +400,7 @@ footer {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -394,12 +409,17 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .logo-crest {
-        height: 40px;
-    }
-
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .hero-cta {
+        padding: 0.85rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .reader-quote blockquote {
+        font-size: 1.2rem;
     }
 
     .books-grid {
@@ -413,13 +433,5 @@ footer {
 
     .newsletter-form {
         flex-direction: column;
-    }
-
-    .featured-crest img {
-        height: 150px;
-    }
-
-    .crest-caption {
-        font-size: 2rem;
     }
 }
