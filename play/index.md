@@ -195,7 +195,7 @@ Island town surrounded by massive old-growth forest. Trees are ancient — cathe
 ## Beyond the Towns
 
 ### The Sunward Blight
-Dead, corrupted land east of the Protectorate. Growing. Trees bleached white, ground ash-grey, undead on the edges. No one knows the cause. Ancient ruins suggest a fallen civilization.
+Dead, corrupted land west to the West of Thorndale, starts on a Peninsula that juts into the Southern part of the Stormhaven Gulf.  PineHaven is further west offshore from the Blight.  A not often travelled road goes South from Saltwind Bay down to the Sacred Peaks.  The Blight is to the West of this road and used to be much further but seems to be growing toward the road.  The shore side is impassable with huge cliffs and deadly rocky shores so no access to the Blight from the West/Sea. Trees bleached white, ground ash-grey, undead on the edges. No one knows the cause. Ancient ruins suggest a fallen civilization.
 
 **Sensory:** Sight — white skeletal trees, grey ash, sourceless shadows. Sound — absolute silence, then cracking, whispering, your own heartbeat. Smell — nothing, then something sweet and wrong. Touch — thick air, ground crunches like old bones, cold spots. Taste — ash. Everything tastes of ash.
 
